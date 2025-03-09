@@ -30,7 +30,7 @@
 
 1. 克隆项目：
 ```bash
-git clone [你的仓库地址]
+git clone https://github.com/fyyyz24/personal_website.git
 ```
 
 2. 安装依赖：

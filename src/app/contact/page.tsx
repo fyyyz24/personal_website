@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
+import { SiTiktok } from 'react-icons/si';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,16 +13,30 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // 这里添加表单提交逻辑
     console.log('Form submitted:', formData);
+    // 可以添加发送邮件或保存到数据库的逻辑
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
+
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/fyyyz24',
+      icon: FaGithub,
+    },
+    {
+      name: 'TikTok',
+      url: 'https://www.douyin.com/user/Ferran.24',
+      icon: SiTiktok,
+    },
+  ];
 
   return (
     <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
@@ -30,58 +46,56 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-8 text-center">联系我</h1>
+          <h1 className="text-4xl font-bold mb-8 text-center">Yunzhan Fu</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* 联系信息 */}
+          {/* Contact Information */}
           <div className="bg-white/5 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-6">联系方式</h2>
+            <h2 className="text-2xl font-semibold mb-6">Contact Information</h2>
             
             <div className="space-y-4">
               <div>
-                <h3 className="text-lg font-medium mb-2">电子邮件</h3>
-                <p className="text-purple-400">your.email@example.com</p>
+                <h3 className="text-lg font-medium mb-2">Email</h3>
+                <a 
+                  href="mailto:2073634592@qq.com"
+                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  2073634592@qq.com
+                </a>
               </div>
               
               <div>
-                <h3 className="text-lg font-medium mb-2">社交媒体</h3>
+                <h3 className="text-lg font-medium mb-2">Social Media</h3>
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    GitHub
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href="#"
-                    className="text-gray-300 hover:text-white transition-colors"
-                  >
-                    Twitter
-                  </a>
+                  {socialLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-white transition-colors text-2xl"
+                    >
+                      <link.icon />
+                    </a>
+                  ))}
                 </div>
               </div>
               
               <div>
-                <h3 className="text-lg font-medium mb-2">地址</h3>
-                <p className="text-gray-300">城市, 省份</p>
+                <h3 className="text-lg font-medium mb-2">Address</h3>
+                <p className="text-gray-300">Hangzhou, Zhejiang, China</p>
               </div>
             </div>
           </div>
 
-          {/* 联系表单 */}
+          {/* Contact Form */}
           <div className="bg-white/5 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold mb-6">发送消息</h2>
+            <h2 className="text-2xl font-semibold mb-6">Send Message</h2>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  姓名
+                  Name
                 </label>
                 <input
                   type="text"
@@ -96,7 +110,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  电子邮件
+                  Email
                 </label>
                 <input
                   type="email"
@@ -111,7 +125,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  主题
+                  Subject
                 </label>
                 <input
                   type="text"
@@ -126,7 +140,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  消息
+                  Message
                 </label>
                 <textarea
                   id="message"
@@ -143,7 +157,7 @@ export default function Contact() {
                 type="submit"
                 className="w-full px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-colors"
               >
-                发送消息
+                Send Message
               </button>
             </form>
           </div>

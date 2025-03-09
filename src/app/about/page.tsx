@@ -3,38 +3,45 @@
 import { motion } from 'framer-motion';
 
 const skills = [
-  { category: '前端开发', items: ['React', 'Vue', 'TypeScript', 'Tailwind CSS'] },
-  { category: '后端开发', items: ['Node.js', 'Python', 'Java', 'SQL'] },
-  { category: '开发工具', items: ['Git', 'Docker', 'VS Code', 'Webpack'] },
-  { category: '设计工具', items: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'] },
+  { 
+    category: 'Frontend Development', 
+    items: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Vue.js', 'Webpack', 'Vite'] 
+  },
+  { 
+    category: 'Backend Development', 
+    items: ['Node.js', 'Express', 'NestJS', 'MySQL', 'MongoDB', 'Redis'] 
+  },
+  { 
+    category: 'Development Tools', 
+    items: ['Git', 'Docker', 'VS Code', 'Postman', 'Jenkins', 'Linux'] 
+  },
+  { 
+    category: 'Additional Skills', 
+    items: ['Frontend Optimization', 'Responsive Design', 'UI/UX', 'Technical Writing', 'Team Collaboration'] 
+  },
 ];
 
 const experiences = [
   {
-    company: '某科技公司',
-    position: '高级前端开发工程师',
-    period: '2020 - 至今',
-    description: '负责公司核心产品的前端架构设计和开发，带领团队完成多个重要项目。',
+    company: 'Hangzhou Dianzi University',
+    position: 'Student Union Technical Department',
+    period: '2023 - 2027',
+    description: 'Leading the development of university event management platform using Vue.js and Node.js. Implementing responsive design and optimizing performance.',
   },
   {
-    company: '某互联网公司',
-    position: '全栈开发工程师',
-    period: '2018 - 2020',
-    description: '参与开发企业级应用，负责前后端开发工作。',
-  },
+    company: 'Open Source Contributions',
+    position: 'Frontend Developer',
+    period: '2023 - Present',
+    description: 'Contributing to various open-source projects, focusing on React and Next.js ecosystem. Implementing new features and fixing bugs.',
+  }
 ];
 
 const education = [
   {
-    school: '某知名大学',
-    degree: '计算机科学与技术 硕士',
-    period: '2015 - 2018',
-  },
-  {
-    school: '某大学',
-    degree: '软件工程 学士',
-    period: '2011 - 2015',
-  },
+    school: 'Hangzhou Dianzi University',
+    degree: 'Bachelor of Computer Science and Technology',
+    period: '2023 - 2027',
+  }
 ];
 
 export default function About() {
@@ -46,11 +53,11 @@ export default function About() {
         transition={{ duration: 0.5 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-4xl font-bold mb-8 text-center">关于我</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">About Me</h1>
 
-        {/* 技能部分 */}
+        {/* Skills Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">技能专长</h2>
+          <h2 className="text-2xl font-semibold mb-6">Skills & Expertise</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {skills.map((skillGroup) => (
               <div
@@ -73,9 +80,9 @@ export default function About() {
           </div>
         </section>
 
-        {/* 工作经验 */}
+        {/* Experience Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-semibold mb-6">工作经验</h2>
+          <h2 className="text-2xl font-semibold mb-6">Experience</h2>
           <div className="space-y-6">
             {experiences.map((exp) => (
               <div
@@ -93,9 +100,9 @@ export default function About() {
           </div>
         </section>
 
-        {/* 教育背景 */}
+        {/* Education Section */}
         <section>
-          <h2 className="text-2xl font-semibold mb-6">教育背景</h2>
+          <h2 className="text-2xl font-semibold mb-6">Education</h2>
           <div className="space-y-6">
             {education.map((edu) => (
               <div

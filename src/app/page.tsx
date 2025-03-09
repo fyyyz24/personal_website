@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -13,21 +14,26 @@ export default function Home() {
           transition={{ duration: 0.5 }}
         >
           <div className="relative mx-auto h-40 w-40 rounded-full overflow-hidden mb-8">
-            {/* 这里替换为您的头像图片 */}
-            <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-green-500 animate-pulse" />
+            {/* 替换为您的头像图片 */}
+            <Image
+              src="/selfie.jpg"  // 使用新的图片名称
+              alt="个人头像"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           
           <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            您的名字
+            YunzhanFu  {/* 修改为您的名字 */}
           </h1>
           
           <p className="text-xl text-gray-300 mb-6">
-            全栈开发工程师 | UI/UX 设计师
+            Full Stack Developer | Frontend Expert
           </p>
           
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            欢迎来到我的个人网站。我专注于创建美观且用户友好的web应用程序，
-            热衷于将创意想法转化为现实。
+            Crafting elegant digital experiences with cutting-edge web technologies.
           </p>
         </motion.div>
 
@@ -38,10 +44,10 @@ export default function Home() {
           className="flex justify-center space-x-4 mt-8"
         >
           <Link href="/portfolio" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium transition-colors">
-            查看作品集
+            portfolio
           </Link>
           <Link href="/contact" className="px-6 py-3 bg-transparent border border-white/20 hover:bg-white/10 rounded-lg text-white font-medium transition-colors">
-            联系我
+            contact me
           </Link>
         </motion.div>
       </div>

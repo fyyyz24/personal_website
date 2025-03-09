@@ -7,10 +7,10 @@ import { motion } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 const navItems = [
-  { name: '首页', path: '/' },
-  { name: '关于', path: '/about' },
-  { name: '作品集', path: '/portfolio' },
-  { name: '联系', path: '/contact' },
+  { name: 'Home', path: '/' },
+  { name: 'About', path: '/about' },
+  { name: 'Portfolio', path: '/portfolio' },
+  { name: 'Contact', path: '/contact' },
 ];
 
 export const Navbar = () => {
@@ -22,7 +22,7 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-2xl font-bold text-white">
-            Your Name
+            Yunzhan Fu
           </Link>
 
           {/* Desktop Navigation */}
