@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 个人网站项目
 
-## Getting Started
+这是一个使用 Next.js 和 Tailwind CSS 构建的现代化个人网站项目。
 
-First, run the development server:
+## 功能特点
 
+- 🎨 现代化的UI设计
+- 🌈 动态渐变背景效果
+- 📱 完全响应式设计
+- ⚡ 优化的性能
+- 🎭 平滑的页面过渡动画
+
+## 页面结构
+
+- 首页：个人简介和欢迎信息
+- 关于：详细的个人信息、技能和经历
+- 作品集：展示个人项目作品
+- 联系：联系方式和留言表单
+
+## 技术栈
+
+- Next.js 15.2.1
+- React 18
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Heroicons
+
+## 开始使用
+
+1. 克隆项目：
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [你的仓库地址]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. 安装依赖：
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. 运行开发服务器：
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. 打开浏览器访问：`http://localhost:3000`
 
-## Learn More
+## 项目结构
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/                 # 路由和页面组件
+│   ├── page.tsx        # 首页
+│   ├── about/          # 关于页面
+│   ├── portfolio/      # 作品集页面
+│   └── contact/        # 联系页面
+├── components/         # 可复用组件
+│   ├── layout/        # 布局相关组件
+│   └── ui/            # UI 组件
+└── styles/            # 全局样式
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 自定义配置
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 个人信息：
+   - 编辑 `src/app/page.tsx` 中的个人简介
+   - 更新 `src/app/about/page.tsx` 中的技能和经历
+   - 修改 `src/app/portfolio/page.tsx` 中的项目展示
 
-## Deploy on Vercel
+2. 样式定制：
+   - 主题颜色在 Tailwind 配置中定义
+   - 背景效果可在 `src/components/ui/AnimatedBackground.tsx` 中调整
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 构建部署
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+构建生产版本：
+```bash
+npm run build
+```
+
+## 注意事项
+
+- 确保 Node.js 版本 >= 18.17.0
+- 所有客户端组件都已标记 'use client'
+- 图片资源需放在 public 目录下
+
+## 许可证
+
+MIT
